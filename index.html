@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Student Database</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stryle.css">
+</head>
+<body>
+    <div class="container">
+        <h2>🔐 Secure Student Database</h2>
+        <input type="text" id="phoneKey" placeholder="Enter Phone Sub-Key (10 digits)">
+        <input type="text" id="dobKey" placeholder="Enter DOB Key (YYYYMMDD)">
+        <button id="decryptButton">Decrypt Data</button>
+    </div>
+
+    <div class="filter-container">
+        <label>Gender: </label>
+        <select id="filterGender">
+            <option value="all">All</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+    
+        <label>Malayali: </label>
+        <select id="filterMalayali">
+            <option value="all">All</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="studentName"></h3>
+            <p id="studentDetails"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
